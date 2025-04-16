@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Power Savers of 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
+    <style>
+      .status {
+            color: block;
+            font-size: 18px;
+            text-align: center;
+        }
+        .check-marks {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: green;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 16px;
+        }
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .banner {
+            background-color: #d2d2d2;
+            color: #000000;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .product-ranking {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .product-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 20px 1px rgb(84 84 84 / 30%);
+      margin-bottom: 30px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      position: relative;
+      box-sizing: border-box;
+    }
+    .product-best{
+      margin: 0;
+      padding: 20px;
+      background-color: #9b1717;
+      color: #FFFFFF;
+      text-align: center;
+      border-top-left-radius: 20px;  /* 左上角圆弧 */
+      border-top-right-radius: 20px; /* 右上角圆弧 */
+    }
+  
+    .first-place {
+      border: 4px solid #3bd11c; /* 第一名的边框颜色 */
+    }
+  
+    /* 排名序号 */
+    .ranking-number {
+      font-size: 24px;
+      font-weight: bold;
+      position: absolute;
+      top: -20px;
+      left: -10px;
+      color: #004cdd;
+      background-color: #fff; /* 圆圈的背景颜色 */
+      border-radius: 50%; /* 设置为圆形 */
+      width: 40px; /* 设置圆圈的宽度 */
+      height: 40px; /* 设置圆圈的高度 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid #004cdd; /* 圆圈的边框 */
+    }
+  
+    /* 控制每个部分的占比 */
+    .product-section {
+      padding: 10px;
+      box-sizing: border-box;
+      border-right: 1px solid #ddd;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .product-section:last-child {
+      border-right: none; /* 移除最后一个部分的右边框 */
+    }
+  
+  .product-section:nth-child(2) {
+      flex: 0 0 20%; /* 设置product-image占比30% */
+  }
+  
+  .product-section:nth-child(3) {
+      flex: 1; /* 设置product-info占比余下的 */
+  }
+  
+  .product-section:nth-child(4) {
+      flex: 0 0 25%; /* 设置product-rating占比30% */
+  }
+  
+    .product-image {
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto; /* 添加此行以确保图片居中对齐 */
+    }
+  
+    .product-image img {
+      width: 100%;
+      object-fit: cover;
+    }
+  
+    .product-info {
+      flex: 1; /* 让product-info占据剩余的可用空间 */
+      margin-left: 20px;
+      text-align: center;
+      padding: 10px; /* 添加内边距 */
+      box-sizing: border-box; /* 确保内边距和边框包含在高度和宽度内 */
+      height: 100%; /* 确保高度覆盖整个父容器 */
+    }
+  
+    .product-info::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: #ddd; /* 边框颜色 */
+    }
+  
+    .product-info h3 {
+      margin: 0 0 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .product-description {
+      list-style-type: none;
+      padding: 0;
+      text-align: left;
+      column-count: 2; /* 设置为两列布局 */
+    }
+  
+    .product-description li {
+      display: flex;
+      padding: 5px; /* 添加内边距 */
+      margin-bottom: 5px; /* 添加底部外边距 */
+    }
+  
+    .checkmark {
+      color: green;
+      margin-right: 8px;
+    }
+  
+    .product-rating {
+     
+      margin-top: 20px;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+  
+    .stars i {
+      font-size: 18px;
+      color: #FFD700;
+      cursor: pointer;
+    }
+  
+    .stars i:hover {
+      color: #FFB700;
+    }
+  
+    .buy-button {
+      width: 90%;
+      padding: 15px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    }
+  
+    .buy-button:hover {
+      background-color: #45a049;
+    }
+  
+    /* 最好的标记 */
+    .best-label {
+      position: absolute;
+      top: 10px;
+      right: 2px;
+    }
+  
+    .best-label img {
+      height: 47px;
+      margin-top: -35px;
+    }
+  
+    .product-rating h1 {
+      margin: 0; /* 移除默认的上下间距 */
+      font-size: 60px;
+    }
+  
+    .product-rating p {
+      margin: 0; /* 设置 p 标签的上间距为 5px，去除下间距 */
+    }
+    .product-best.mobile-layout{
+    display: none;
+    }
+  
+    @media (max-width: 768px) {
+      .product-item {
+        display: none; /* 隐藏桌面端的布局 */
+      }
+      
+      .product-rating {
+        flex: 0 0 50%; /* 20% 占比 */
+        margin-top: 10px;
+        text-align: center;
+      }
+      .product-image {
+        flex: 0 0 50%; /* 20% 占比 */
+        border-right: 1px solid #ddd;
+      }
+      .mobile-layout {
+        display: block; /* 显示移动端的布局 */
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        position: relative;
+      }
+  
+      .mobile-image-rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-bottom: 10px; /* 添加内边距 */
+      }
+  
+      .mobile-layout h3 {
+        text-align: center;
+        margin: 10px 0 10px 0;
+        padding-bottom: 10px; /* 添加内边距 */
+        border-bottom: 1px solid #ddd;
+      }
+  
+      .mobile-layout .product-description {
+        text-align: left;
+        margin-bottom: 10px;
+        column-count: 1;
+        padding-bottom: 10px; /* 添加内边距 */
+      }
+  
+      .mobile-layout .buy-button {
+        display: block;
+        width: 100%;
+      }
+  
+      .ranking-number {
+        font-size: 24px;
+        font-weight: bold;
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        color: #004cdd;
+        background-color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #004cdd;
+      }
+      .product-description li {
+      padding: 1px; /* 添加内边距 */
+    }
+  
+      .best-label {
+        position: absolute;
+        top: 10px;
+        right: 2px;
+      }
+      .best-label img {
+        height: 30px;
+      }
+      .product-best{
+     display: none; 
+    }
+    .product-best.mobile-layout{
+      display: block;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #9b1717;
+      color: #FFFFFF;
+      text-align: center;
+      border-top-left-radius: 10px;  /* 左上角圆弧 */
+      border-top-right-radius: 10px; /* 右上角圆弧 */
+      
+    }
+     
+    }
+    
+  
+    @media (min-width: 769px) {
+      .mobile-layout {
+        display: none; /* 隐藏移动端的布局 */
+      }
+    }
+  
+    .mobile-layout.first-place {
+      border: 4px solid #3bd11c; /* 应用第一名的边框颜色 */
+    }
+  
+    .content h2, .content h3 {
+        color: #2c3e50; /* 更改标题颜色为深蓝色 */
+    }
+    .content img {
+        display: block;
+        margin: -20px auto;
+        max-width: 100%;
+    }
+    .customer-reviews {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+    }
+    .customer-reviews h3 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+    .review {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-left: 4px solid #4CAF50;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+    .review strong {
+        display: block;
+        margin-top: 10px;
+        color: #555;
+    }
+    /* Enhance modal style */
+    .modal-content {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    .modal-header {
+        background-color: #4CAF50;
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .modal-footer {
+        border-top: none;
+    }
+    /* Enhance Results and Order sections */
+    h3 {
+        color: #4CAF50;
+        margin-top: 30px;
+    }
+    ol {
+        padding-left: 20px;
+        list-style-type: decimal;
+    }
+    ol li {
+        margin-bottom: 10px;
+    }
+    .results-section, .order-section {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+    /* Center the modal on the screen */
+    .modal-dialog {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    /* Ensure the close button works */
+    .close {
+        cursor: pointer;
+    }
+    /* Adjust modal to not cover the entire page */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        z-index: 1050;
+    }
+    .modal-dialog {
+        margin: 30px auto;
+    }
+    @media (max-width: 768px) {
+        .order-section {
+            padding: 10px; /* 减少内边距以适应小屏幕 */
+            font-size: 14px; /* 调整字体大小 */
+        }
+        .order-section ol {
+            padding-left: 15px; /* 减少列表的左边距 */
+        }
+        .order-section ol li {
+            margin-bottom: 8px; /* 减少列表项的底部外边距 */
+        }
+    }
+    .order-section {
+        max-width: 100%; /* 确保内容不超出屏幕宽度 */
+        overflow-x: auto; /* 允许水平滚动 */
+    }
+    .center-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .discount-tooltip {
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff8e1; /* 更改为柔和的黄色 */
+        color: #1900ff;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border: 2px dashed #ffcc00; /* 添加虚线边框 */
+    }
+    </style>
+</head>
+<body>
+    <!-- Remove Welcome Modal -->
+    <!-- Product 1 Modal -->
+    <div id="product1Modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> <i class="fa fa-clock-o" aria-hidden="true"></i> BEGRENZTE ZEIT</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <img src="style//Nuubu.jpg"" alt="Nuubu" style="width:50%; margin-bottom: 15px;">
+                    <p>Get 70% OFF Today!</p>
+                    <p>Buy Nuubu Detox Foot Patches now and get 70% off the original price.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/click.html" class="buy-button" style="text-align: center; width: 100%; box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;">CLICK HERE TO SAVE NOW <i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="banner"><h1>Top 5 Best Detox Foot Pads Under $20 in 2025</h1>
+          
+        </div>
+        <div class="status">
+          <span class="check-marks">&#10003;</span> Last Updated: <span id="currentDate"></span>
+      </div>
+      <br>
+        <p style="text-align: center;"><strong>We set extremely high testing standards for our readers so you can feel confident in our recommendations.
+          Our goal is to help more consumers save money and time through our professional team of experts.</strong></p>
+
+        <br>
+        <p>Now everyone is in a sub-healthy state. Toxins in the body cannot be excreted in time, leading to obesity and lack of energy. Detox Foot Patches is your natural solution to rejuvenate your body and enhance your health.</p>
+        <p>Everyone's health should come first, so our team of experts shopped and tested a variety of detox foot patches to determine which product is the best in terms of safety, detoxification effectiveness and price.</p>
+        
+        <br>
+        <h4>After extensive testing, we arrived at the final results. Read on to find out which detox foot patches stand out.</h4>
+        <br>
+        <div class="product-ranking"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span><!-- 排行框 -->
+          <div class="product-item first-place"><!-- 排名序号 -->
+          <div class="ranking-number">#1</div>
+          <!-- 产品图片 -->
+          <div class="product-section">
+          <div class="product-image"><img src="style//Nuubu.jpg" alt="产品1" /></div>
+          </div>
+          <!-- 产品信息：标题和描述 -->
+          <div class="product-section">
+          <div class="product-info">
+          <h3>Nuubu Detox Foot Pads</h3>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> Highly effective for detoxifying the body and boosting energy</li>
+          <li><span class="checkmark">✅</span> 100% natural ingredients (bamboo vinegar, herbs, minerals)</li>
+          <li><span class="checkmark">✅</span> Gentle on the skin – suitable for sensitive skin types</li>
+          <li><span class="checkmark">✅</span> Helps with mood swings and mental exhaustion</li>
+          <li><span class="checkmark">✅</span> Improves sleep quality and overall well-being</li>
+          <li><span class="checkmark">✅</span> Relieves stress and fatigue</li>
+          <li><span class="checkmark">✅</span> No irritation or unpleasant side effects</li>
+          <li><span class="checkmark">✅</span> Easy to use – simply apply overnight for maximum effect</li>
+          <li><span class="checkmark">✅</span> 30-day money-back guarantee</li>
+          <li><span class="checkmark" style="color: red;">❌</span> High demand – often sells out quickly</li>
+          </ul>
+          </div>
+          </div>
+          <!-- 评分与产品引导按钮 -->
+          <div class="product-section">
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+          </div>
+          <h1>9.8</h1>
+          <h2>Excellent</h2>
+          <small class="text-muted">User Reviews (13,327)</small>
+          <a style="text-decoration: none; width: 100%; position: relative;" href="../click.html"> <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;"> VISIT SITE<i class="fa fa-arrow-right"></i> <span class="discount-tooltip"> 70% OFF Sale </span> </button> </a>
+          
+          </div>
+          </div>
+          <!-- 最好的标记 -->
+          <div class="best-label"><img src="style/limited-offer-smaller.png" alt="Best" /></div>
+          </div>
+          <div class="product-item">
+          <div class="ranking-number">#2</div>
+          <div class="product-section">
+          <div class="product-image"><img src="style//purisaki.jpg" alt="产品2" /></div>
+          </div>
+          <div class="product-section">
+          <div class="product-info">
+          <h3>purisaki Detox Foot Pads</h3>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> 100% natural ingredients – free from toxic chemicals and harsh substances</li>
+          <li><span class="checkmark">✅</span> This formula is several hundred years old</li>
+          <li><span class="checkmark">✅</span> Can relieve fatigue and improve sleep</li>
+          <li><span class="checkmark">✅</span> Easy to use – simply take out and stick under the feet</li>
+          <li><span class="checkmark">✅</span> The world's first foot patch with electromagnetic tourmaline crystal technology – the effect is visible</li>
+          <li><span class="checkmark">✅</span> Limited time discount of 70%</li>
+          <li><span class="checkmark">✅</span> Toxins are visible through color change</li>
+          <li><span class="checkmark" style="color: red;">❌</span> High demand – often sells out quickly</li>
+          </ul>
+          </div>
+          </div>
+          <div class="product-section">
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+          </div>
+          <h1>9.5</h1>
+          <h2>Very Good</h2>
+          <small class="text-muted">User Reviews (8,765)</small>
+          <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;" onclick="window.location.href='../click/foot/2'">VISIT SITE<i class="fa fa-arrow-right"></i></button></div>
+          </div>
+          </div>
+          <div class="product-item">
+          <div class="ranking-number">#3</div>
+          <div class="product-section">
+          <div class="product-image"><img src="style//kinoki.jpg" alt="产品3" /></div>
+          </div>
+          <div class="product-section">
+          <div class="product-info">
+          <h3>Kinoki Detox Foot Pads</h3>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> Good for detoxifying the feet and reducing foot odor</li>
+          <li><span class="checkmark">✅</span> Contains natural herbal ingredients for gentle detoxification</li>
+          <li><span class="checkmark">✅</span> Promotes well-being and helps with relaxation</li>
+          <li><span class="checkmark">✅</span> Easy to use – apply before bedtime, works overnight</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Sticky adhesive can be uncomfortable</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Effectiveness varies from person to person</li>
+          <li><span class="checkmark" style="color: red;">❌</span> May cause slight irritation for sensitive skin</li>
+          </ul>
+          </div>
+          </div>
+          <div class="product-section">
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+          </div>
+          <h1>8.5</h1>
+          <h2>Good</h2>
+          <small class="text-muted">User Reviews (5,432)</small>
+          <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;" onclick="window.location.href='../click/foot/3'">VISIT SITE<i class="fa fa-arrow-right"></i></button></div>
+          </div>
+          </div>
+          <div class="product-item">
+          <div class="ranking-number">#4</div>
+          <div class="product-section">
+          <div class="product-image"><img src="style//dr.jpg" alt="产品4" /></div>
+          </div>
+          <div class="product-section">
+          <div class="product-info">
+          <h3>Dr. Entre's Foot Pads</h3>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> Promotes better sleep and relaxation</li>
+          <li><span class="checkmark">✅</span> Supports overall foot health</li>
+          <li><span class="checkmark">✅</span> Easy to use – apply overnight</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Less effective than some of the top-rated patches</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Results not immediately noticeable</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Can be a bit messy due to sticky residue</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Chemical smell</li>
+          </ul>
+          </div>
+          </div>
+          <div class="product-section">
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+          </div>
+          <h1>7.8</h1>
+          <h2>Average</h2>
+          <small class="text-muted">User Reviews (4,321)</small>
+          <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;" onclick="window.location.href='../click/foot/4'">VISIT SITE<i class="fa fa-arrow-right"></i></button></div>
+          </div>
+          </div>
+          <div class="product-item">
+          <div class="ranking-number">#5</div>
+          <div class="product-section">
+          <div class="product-image"><img src="style//Xitox.jpg" alt="产品5" /></div>
+          </div>
+          <div class="product-section">
+          <div class="product-info">
+          <h3>Xitox Foot Pads</h3>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> High-quality materials</li>
+          <li><span class="checkmark">✅</span> Natural and safe detoxification</li>
+          <li><span class="checkmark">✅</span> Tested and certified formula</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Slightly irritated the skin</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Most expensive product</li>
+          </ul>
+          </div>
+          </div>
+          <div class="product-section">
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+          </div>
+          <h1>7.1</h1>
+          <h2>Average</h2>
+          <small class="text-muted">User Reviews (3,210)</small>
+          <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;" onclick="window.location.href='../click/foot/5'">VISIT SITE<i class="fa fa-arrow-right"></i></button></div>
+          </div>
+          </div>
+          <!-- 产品1重复引导 -->
+          <div class="product-best">Best Detox Foot Pads Overall</div>
+          <div class="product-item"><!-- 排名序号 -->
+          <div class="product-section" style="display: none;"> </div>
+          <!-- 产品图片 -->
+          <div class="product-section">
+          <div class="product-image"><img src="style//Nuubu.jpg" alt="产品1" /></div>
+          </div>
+          <!-- 产品信息：标题和描述 -->
+          <div class="product-section">
+          <div class="product-info">
+          <h3>Nuubu Detox Foot Pads</h3>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> Highly effective for detoxifying the body and boosting energy</li>
+          <li><span class="checkmark">✅</span> 100% natural ingredients (bamboo vinegar, herbs, minerals)</li>
+          <li><span class="checkmark">✅</span> Gentle on the skin – suitable for sensitive skin types</li>
+          <li><span class="checkmark">✅</span> Helps with mood swings and mental exhaustion</li>
+          <li><span class="checkmark">✅</span> Improves sleep quality and overall well-being</li>
+          <li><span class="checkmark">✅</span> Relieves stress and fatigue</li>
+          <li><span class="checkmark">✅</span> No irritation or unpleasant side effects</li>
+          <li><span class="checkmark">✅</span> Easy to use – simply apply overnight for maximum effect</li>
+          <li><span class="checkmark">✅</span> 30-day money-back guarantee</li>
+          <li><span class="checkmark" style="color: red;">❌</span> High demand – often sells out quickly</li>
+          </ul>
+          </div>
+          </div>
+          <!-- 评分与产品引导按钮 -->
+          <div class="product-section">
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+          </div>
+          <h1>9.8</h1>
+          <h2>Excellent</h2>
+          <small class="text-muted">User Reviews (13,327)</small>
+          <a style="text-decoration: none; width: 100%; position: relative;" href="../click.html"> <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;"> VISIT SITE <i class="fa fa-arrow-right"></i> <span class="discount-tooltip"> 70% OFF Sale </span><span class="discount-tooltip"> 70% OFF Sale </span></button> </a></div>
+          </div>
+          <!-- 最好的标记 -->
+          <div class="best-label"><img src="style/limited-offer-smaller.png" alt="Best" /></div>
+          </div>
+          <!-- 产品1重复引导 -->
+          <div class="product-item mobile-layout first-place">
+          <div class="ranking-number">#1</div>
+          <h3>Nuubu Detox Foot Pads</h3>
+          <div class="mobile-image-rating">
+          <div class="product-image"><img src="style//Nuubu.jpg" alt="产品1" /></div>
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+          </div>
+          <h1>9.8</h1>
+          <h2 style="font-size: 22px;">Excellent</h2>
+          <small class="text-muted">User Reviews (13,327)</small>
+          </div>
+          </div>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> Highly effective for detoxifying the body and boosting energy</li>
+          <li><span class="checkmark">✅</span> 100% natural ingredients (bamboo vinegar, herbs, minerals)</li>
+          <li><span class="checkmark">✅</span> Gentle on the skin – suitable for sensitive skin types</li>
+          <li><span class="checkmark">✅</span> Helps with mood swings and mental exhaustion</li>
+          <li><span class="checkmark">✅</span> Improves sleep quality and overall well-being</li>
+          <li><span class="checkmark">✅</span> Relieves stress and fatigue</li>
+          <li><span class="checkmark">✅</span> No irritation or unpleasant side effects</li>
+          <li><span class="checkmark">✅</span> Easy to use – simply apply overnight for maximum effect</li>
+          <li><span class="checkmark">✅</span> 30-day money-back guarantee</li>
+          <li><span class="checkmark" style="color: red;">❌</span> High demand – often sells out quickly</li>
+          </ul>
+          <a style="text-decoration: none; width: 100%; position: relative;" href="../click.html"> <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;"> VISIT SITE<i class="fa fa-arrow-right"></i><span class="discount-tooltip"> 70% OFF Sale </span></button> </a>
+          <div class="best-label"><img src="style/limited-offer-smaller.png" alt="Best" /></div>
+          </div>
+          <div class="product-item mobile-layout">
+          <div class="ranking-number">#2</div>
+          <h3>purisaki Detox Foot Pads</h3>
+          <div class="mobile-image-rating">
+          <div class="product-image"><img src="style//purisaki.jpg" alt="产品2" /></div>
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+          </div>
+          <h1>9.5</h1>
+          <h2 style="font-size: 22px;">Very Good</h2>
+          <small class="text-muted">User Reviews (8,765)</small>
+          </div>
+          </div>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> 100% natural ingredients – free from toxic chemicals and harsh substances</li>
+          <li><span class="checkmark">✅</span> This formula is several hundred years old</li>
+          <li><span class="checkmark">✅</span> Can relieve fatigue and improve sleep</li>
+          <li><span class="checkmark">✅</span> Easy to use – simply take out and stick under the feet</li>
+          <li><span class="checkmark">✅</span> The world's first foot patch with electromagnetic tourmaline crystal technology – the effect is visible</li>
+          <li><span class="checkmark">✅</span> Limited time discount of 70%</li>
+          <li><span class="checkmark">✅</span> Toxins are visible through color change</li>
+          <li><span class="checkmark" style="color: red;">❌</span> High demand – often sells out quickly</li>
+          </ul>
+          <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;" onclick="window.location.href='../click/foot/2'">VISIT SITE<i class="fa fa-arrow-right"></i></button></div>
+          <div class="product-item mobile-layout">
+          <div class="ranking-number">#3</div>
+          <h3>Kinoki Detox Foot Pads</h3>
+          <div class="mobile-image-rating">
+          <div class="product-image"><img src="style//kinoki.jpg" alt="产品3" /></div>
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+          </div>
+          <h1>8.5</h1>
+          <h2 style="font-size: 22px;">Good</h2>
+          <small class="text-muted">User Reviews (5,432)</small>
+          </div>
+          </div>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> Good for detoxifying the feet and reducing foot odor</li>
+          <li><span class="checkmark">✅</span> Contains natural herbal ingredients for gentle detoxification</li>
+          <li><span class="checkmark">✅</span> Promotes well-being and helps with relaxation</li>
+          <li><span class="checkmark">✅</span> Easy to use – apply before bedtime, works overnight</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Sticky adhesive can be uncomfortable</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Effectiveness varies from person to person</li>
+          <li><span class="checkmark" style="color: red;">❌</span> May cause slight irritation for sensitive skin</li>
+          </ul>
+          <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;" onclick="window.location.href='../click/foot/3'">VISIT SITE<i class="fa fa-arrow-right"></i></button></div>
+          <div class="product-item mobile-layout">
+          <div class="ranking-number">#4</div>
+          <h3>Dr. Entre's Foot Pads</h3>
+          <div class="mobile-image-rating">
+          <div class="product-image"><img src="style//dr.jpg" alt="产品4" /></div>
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+          </div>
+          <h1>7.8</h1>
+          <h2 style="font-size: 22px;">Average</h2>
+          <small class="text-muted">User Reviews (4,321)</small>
+          </div>
+          </div>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> Promotes better sleep and relaxation</li>
+          <li><span class="checkmark">✅</span> Supports overall foot health</li>
+          <li><span class="checkmark">✅</span> Easy to use – apply overnight</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Less effective than some of the top-rated patches</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Results not immediately noticeable</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Can be a bit messy due to sticky residue</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Chemical smell</li>
+          </ul>
+          <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;" onclick="window.location.href='../click/foot/4'">VISIT SITE<i class="fa fa-arrow-right"></i></button></div>
+          <div class="product-item mobile-layout">
+          <div class="ranking-number">#5</div>
+          <h3>Xitox Foot Pads</h3>
+          <div class="mobile-image-rating">
+          <div class="product-image"><img src="style//Xitox.jpg" alt="产品5" /></div>
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+          </div>
+          <h1>7.1</h1>
+          <h2 style="font-size: 22px;">Average</h2>
+          <small class="text-muted">User Reviews (3,210)</small>
+          </div>
+          </div>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> High-quality materials</li>
+          <li><span class="checkmark">✅</span> Natural and safe detoxification</li>
+          <li><span class="checkmark">✅</span> Tested and certified formula</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Slightly irritated the skin</li>
+          <li><span class="checkmark" style="color: red;">❌</span> Most expensive product</li>
+          </ul>
+          <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;" onclick="window.location.href='../click/foot/5'">VISIT SITE<i class="fa fa-arrow-right"></i></button></div>
+          </div>
+          <!-- 产品1重复引导 -->
+          <div class="product-best mobile-layout">Best Overall Power Saver</div>
+          <div class="product-item mobile-layout first-place">
+          <h3>Nuubu Detox Foot Pads</h3>
+          <div class="mobile-image-rating">
+          <div class="product-image"><img src="style//Nuubu.jpg" alt="产品1" /></div>
+          <div class="product-rating">
+          <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+          </div>
+          <h1>9.8</h1>
+          <h2 style="font-size: 22px;">Excellent</h2>
+          <small class="text-muted">User Reviews (13,327)</small>
+          </div>
+          </div>
+          <ul class="product-description">
+          <li><span class="checkmark">✅</span> Highly effective for detoxifying the body and boosting energy</li>
+          <li><span class="checkmark">✅</span> 100% natural ingredients (bamboo vinegar, herbs, minerals)</li>
+          <li><span class="checkmark">✅</span> Gentle on the skin – suitable for sensitive skin types</li>
+          <li><span class="checkmark">✅</span> Helps with mood swings and mental exhaustion</li>
+          <li><span class="checkmark">✅</span> Improves sleep quality and overall well-being</li>
+          <li><span class="checkmark">✅</span> Relieves stress and fatigue</li>
+          <li><span class="checkmark">✅</span> No irritation or unpleasant side effects</li>
+          <li><span class="checkmark">✅</span> Easy to use – simply apply overnight for maximum effect</li>
+          <li><span class="checkmark">✅</span> 30-day money-back guarantee</li>
+          <li><span class="checkmark" style="color: red;">❌</span> High demand – often sells out quickly</li>
+          </ul>
+          <a style="text-decoration: none; width: 100%; position: relative;" href="../click.html"> <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;"> VISIT SITE<i class="fa fa-arrow-right"></i><span class="discount-tooltip"> 70% OFF Sale </span> </button> </a>
+          <div class="best-label"><img src="style/limited-offer-smaller.png" alt="Best" /></div>
+          </div>
+          
+
+        <h2>We Bought & Tested the Best-Selling Detox Foot Patches, Here's Why Nuubu Detox Foot Patches is #1:</h2>
+        <p>Written By Emily Roberts – Updated April 16, 2025</p>
+        <p>After extensive testing, Nuubu Detox Foot Patches have proven to be far superior to any other detox products we've tried, making them our top pick for detoxification in 2025.</p>
+        <br>
+        <img src="style/nuubu-foot-patch2.jpg" alt="Nuubu Foot Patch">
+        <br>
+        <p>What sets Nuubu Detox Foot Patches apart from the competition is their powerful, all-natural formula that delivers remarkable results in just a few days. These foot patches work while you sleep, absorbing toxins and impurities from your body overnight. Packed with natural ingredients like bamboo vinegar, herbs, and minerals, Nuubu Detox Foot Patches provide a holistic detox solution that's both effective and safe for all skin types.</p> 
+        <p>What truly impressed us during our testing was how quickly Nuubu Detox Foot Patches improved overall wellness. After just a few nights of use, users reported increased energy levels, better sleep quality, and a noticeable reduction in foot odor. The effectiveness of the patches in drawing out toxins is unmatched, surpassing all other detox patches we've tried.</p>
+        <p>Another standout feature is the ease of use. Simply apply the patches before bed, and they work their magic overnight. In the morning, the patches are easy to remove, leaving your feet feeling refreshed and rejuvenated. Unlike other detox methods that require time-consuming regimens, Nuubu Detox Foot Patches make detoxification effortless and convenient.</p>
+        <p><button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;" onclick="window.location.href='/click.html'">Visit Nuubu Official Store & Claim 70% Off Discount</button></p>
+        <h3>Results:</h3>
+        <br>
+        <img src="style/nuubu-foot-patch4.jpg" alt="Nuubu Foot Patch">
+        <div class="results-section">
+            <ol>
+                <li><strong>Packaging and First Impressions:</strong>The packaging of the Nuubu pads looked great and provided excellent protection during transit. Upon opening the packets, the first thing we noticed was the pleasant minty fresh scent, unlike the chemical odors some other pads we've tried.</li>
+                <li><strong>Ease of Use: </strong> Using the Nuubu pads was simple and hassle-free compared to cheaper, lower-quality brands. All you need to do is peel them off and apply them to the center of your feet. There's no need to deal with sticky peels or complications.</li>
+                <li><strong>Effectiveness: </strong> Out of the 12 products we tested, only 8 stayed securely on the foot throughout the night. The others either caused a mess or fell off when walking around. Nuubu, however, had the best grip, staying in place overnight while still being easy to remove in the morning.</li>
+                <li><strong>Real Results:</strong> Some of the other products we tested made extraordinary claims, even promising to cure a range of illnesses. However, Nuubu didn't need to make such promises because its effects were exactly what we needed. Those who used Nuubu for a few days noticed waking up feeling refreshed and had improved concentration during the day without distractions.</li>
+                <li><strong>Visible Detox Effects:</strong> One noticeable effect was the color change of the pads. The first morning after using them, the pads were dark black, which indicated the toxins that had leached out of the body. Over time, the pads became less black, offering a clear visual sign that your body was detoxing and improving.</li>
+                <li><strong>Conclusion: </strong> Choosing the right foot pads makes all the difference. We've tested many brands, and Nuubu stands out for its reliability and effectiveness. We highly recommend it, as it provides actual results without the need for false claims.</li>
+            </ol>
+
+        </div>
+        
+        <br>
+        <h3>Here's how to order:</h3>
+        <div class="order-section">
+            <ol>
+                <li>Visit the official Nuubu website;</li>
+                <li>Select the number of devices you want to purchase;</li>
+                <li>Enter your shipping details and payment method;</li>
+                <li>Sit back and relax while Nuubu is delivered to your doorstep!</li>
+            </ol>
+        </div>
+        <br>
+        <button class="buy-button" style="box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.8); position: relative;" onclick="window.location.href='/click.html'">Visit Nuubu Official Store & Claim 70% Off Discount</button> 
+    </div>
+   
+  <footer style="background-color: #303030; padding: 20px; text-align: center; margin-top: 40px;">
+    <div style="display: inline-block;">
+        <a href="privacy.html" style="margin-right: 15px;">Privacy Policy</a>
+        <a href="terms.html" style="margin-right: 15px;">Terms of Use</a>
+        <a href="about.html" style="margin-right: 15px;">About Us</a>
+        <a href="advertising.html" style="margin-right: 15px;">Advertising </a>
+
+        <p style="color:#a2a2a2; padding-top: 20px;" >
+          This site is a free online resource that strives to offer helpful content and comparison 
+          features to its visitors. Please be advised that the operator of this site accepts 
+          advertising compensation from companies that appear on the site, and such compensation 
+          impacts the location and order in which the companies (and/or their products) are presented,
+           and in some cases may also impact the rating that is assigned to them. To the extent that
+            ratings appear on this site, such rating is determined by our subjective opinion and based 
+            on a methodology that aggregates our analysis of brand market share and reputation, each 
+            brand's conversion rates, compensation paid to us and general consumer interest. Company
+             listings on this page DO NOT imply endorsement. Except as expressly set forth in our 
+             Terms of Use, all representations and warranties regarding the information presented 
+             on this page are disclaimed. The information, including pricing, which appears on this 
+             site is subject to change at any time.
+        </p>
+    </div>
+    <p style="margin-top: 10px; color: #a2a2a2;">Copyright © 2025 | All Rights Reserved.</p>
+</footer>
+    <script>
+      $(document).ready(function() {
+          // Ensure product 1 modal shows after 5 seconds the first time
+          setTimeout(function() {
+              $('#product1Modal').modal('show');
+          }, 80000); 
+          // Ensure the close button works
+          $('.close').click(function() {
+              $('#product1Modal').modal('hide');
+          });
+      });
+  </script>
+  <script>
+    function updateDate() {
+        const date = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = date.toLocaleDateString('en-US', options);
+        document.getElementById('currentDate').textContent = formattedDate;
+    }
+    updateDate();
+</script>
+<script>
+  // 解码函数，处理双重编码等问题
+  function safeDecode(value) {
+      try {
+          // 尝试双重解码
+          const once = decodeURIComponent(value);
+          const twice = decodeURIComponent(once);
+          return twice;
+      } catch (e) {
+          try {
+              // 如果双重解码失败，退回一次解码
+              return decodeURIComponent(value);
+          } catch (err) {
+              // 解码失败则返回原始值
+              return value;
+          }
+      }
+  }
+
+  // 获取 URL 参数并尝试多层解码
+  function getURLParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const rawValue = urlParams.get(name);
+      return rawValue ? safeDecode(rawValue) : null;
+  }
+
+  // 获取并处理参数
+  const utmTerm = getURLParameter('utm_term');
+  const gclid = getURLParameter('gclid');
+  const gbraid = getURLParameter('gbraid');
+
+  // 保存 utm_term
+  if (utmTerm) {
+      localStorage.setItem('utm_term', utmTerm);
+      console.log('UTM Term:', utmTerm);
+  }
+
+  // 保存 gclid，如果没有则保存 gbraid
+  if (gclid) {
+      localStorage.setItem('gclid', gclid);
+  } else if (gbraid) {
+      localStorage.setItem('gclid', gbraid);
+  }
+</script>
+
+  <!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
